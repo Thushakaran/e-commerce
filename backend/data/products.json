@@ -1,0 +1,140 @@
+[
+    {
+  "name": "Dell Inspiron Laptop",
+  "price": 1200.50,
+  "description": "High-performance Dell laptop with 16GB RAM, 512GB SSD, and Intel i7 processor.",
+  "ratings": "4.2",
+  "images": [
+    {
+      "image": "https://example.com/images/laptop-front.jpg"
+    },
+    {
+      "image": "https://example.com/images/laptop-side.jpg"
+    }
+  ],
+  "category": "Laptops",
+  "seller": "Dell Official Store",
+  "stock": 10,
+  "numOfReview": 2,
+  "review": [
+    {
+      "name": "Alice Johnson",
+      "rating": "5",
+      "comment": "Great laptop for programming and daily use."
+    },
+    {
+      "name": "Bob Smith",
+      "rating": "3.5",
+      "comment": "Good performance but battery life could be better."
+    }
+  ],
+  "createdAt": "2025-05-23T10:00:00.000Z"
+},
+{
+  "name": "Apple iPhone 14",
+  "price": 999.99,
+  "description": "Latest Apple iPhone with A15 Bionic chip and improved battery life.",
+  "ratings": "4.8",
+  "images": [
+    { "image": "https://example.com/images/iphone14-front.jpg" },
+    { "image": "https://example.com/images/iphone14-back.jpg" }
+  ],
+  "category": "Mobile Phones",
+  "seller": "Apple Store",
+  "stock": 25,
+  "numOfReview": 3,
+  "review": [
+    {
+      "name": "Sarah Lee",
+      "rating": "5",
+      "comment": "Amazing phone! Super smooth and fast."
+    }
+  ],
+  "createdAt": "2025-05-23T10:00:00.000Z"
+},
+{
+  "name": "Sony WH-1000XM4 Wireless Headphones",
+  "price": 349.99,
+  "description": "Noise-canceling over-ear headphones with 30 hours battery life.",
+  "ratings": "4.6",
+  "images": [
+    { "image": "https://example.com/images/sony-headphones.jpg" }
+  ],
+  "category": "Headphones",
+  "seller": "Sony Official Store",
+  "stock": 50,
+  "numOfReview": 5,
+  "review": [
+    {
+      "name": "Tom Allen",
+      "rating": "4",
+      "comment": "Best noise cancellation, but a bit pricey."
+    }
+  ],
+  "createdAt": "2025-05-23T10:00:00.000Z"
+},
+{
+  "name": "Atomic Habits by James Clear",
+  "price": 18.00,
+  "description": "Practical guide to building good habits and breaking bad ones.",
+  "ratings": "4.9",
+  "images": [
+    { "image": "https://example.com/images/atomic-habits.jpg" }
+  ],
+  "category": "Books ",
+  "seller": "Penguin Publishers",
+  "stock": 100,
+  "numOfReview": 8,
+  "review": [
+    {
+      "name": "Emily White",
+      "rating": "5",
+      "comment": "Life-changing read!"
+    }
+  ],
+  "createdAt": "2025-05-23T10:00:00.000Z"
+},
+{
+  "name": "Nike Air Zoom Pegasus 39",
+  "price": 120.00,
+  "description": "Comfortable and lightweight running shoes for daily training.",
+  "ratings": "4.4",
+  "images": [
+    { "image": "https://example.com/images/nike-shoes.jpg" }
+  ],
+  "category": "Clothes/Shoes",
+  "seller": "Nike Official Store",
+  "stock": 40,
+  "numOfReview": 4,
+  "review": [
+    {
+      "name": "Jake Martin",
+      "rating": "4",
+      "comment": "Great shoes but size runs small."
+    }
+  ],
+  "createdAt": "2025-05-23T10:00:00.000Z"
+},
+{
+  "name": "Modern LED Ceiling Light - 36W",
+  "price": 49.99,
+  "description": "Energy-efficient ceiling light suitable for living rooms and offices.",
+  "ratings": "4.1",
+  "images": [
+    { "image": "https://example.com/images/ceiling-light.jpg" }
+  ],
+  "category": "Home",
+  "seller": "Home Essentials Co.",
+  "stock": 30,
+  "numOfReview": 2,
+  "review": [
+    {
+      "name": "Laura Green",
+      "rating": "4",
+      "comment": "Bright and elegant light fixture."
+    }
+  ],
+  "createdAt": "2025-05-23T10:00:00.000Z"
+}
+]
+
