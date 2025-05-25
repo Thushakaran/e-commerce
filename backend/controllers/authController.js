@@ -1,5 +1,6 @@
 const catchAsyncError = require('../middlewares/catchAsyncError')
 const User = require('../models/userModel')
+const sendEmail = require('../utils/email');
 const ErrorHandler = require('../utils/errorHandler')
 const sendToken = require('../utils/jwt')
 
@@ -49,3 +50,38 @@ exports.logoutUser = (req, res, next) => {
             message: "Loggedout"
         })
 }
+
+// forgot password - /api/v1/password/forgot
+exports.forgotPassword = catchAsyncError(async (req, res, next) => {
+    const user = await User.findOne({ email: req.body.email });
+
+    if (!user) {
+        return next(new ErrorHandler('User not found with this email', 404))
+    }
+
+    const resetToken = user.getResetToken();
+    await user.save({ validateBeforeSave: false })
+
+    // let BASE_URL = process.env.FRONTEND_URL;
+    // if (process.env.NODE_ENV === "production") {
+    //     BASE_URL = `${req.protocol}://${req.get('host')}`
+    // }
+
+    // create reset url
+    const resetUrl = `${req.protocol}://${req.get('host')}/api/password/reset/${resetToken}`;
+
+    const message = `Your password reset url is as follow \n\n ${resetUrl} \n\n If you have not requested this email, then ingnore it.`;
+
+    try {
+        sendEmail({
+            email: user.email,
+            subject: "Karan Password recovery",
+            message
+        })
+    } catch (error) {
+        user.resetPasswordToken = undefined;
+        user.resetPasswordTokenExpire = undefined;
+        await user.save({ validateBeforeSave: false });
+        return next(new ErrorHandler(error.message, 500))
+    }
+})
