@@ -68,9 +68,10 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
     // }
 
     // create reset url
-    const resetUrl = `${req.protocol}://${req.get('host')}/api/password/reset/${resetToken}`;
+    const resetUrl = `${req.protocol}://${req.get('host')}/api/v1/password/reset/${resetToken}`;
 
-    const message = `Your password reset url is as follow \n\n ${resetUrl} \n\n If you have not requested this email, then ingnore it.`;
+    const message = `Your password reset url is as follow \n\n
+    ${resetUrl} \n\n If you have not requested this email, then ingnore it.`;
 
     try {
         sendEmail({
@@ -84,4 +85,95 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
         await user.save({ validateBeforeSave: false });
         return next(new ErrorHandler(error.message, 500))
     }
+})
+
+exports.getUserProfile = catchAsyncError(async (req, res, next) => {
+    const user = await User.findById(req.user.id)
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+exports.changePassword = catchAsyncError(async (req, res, next) => {
+    const user = await User.findById(req.user.id).select('+password');
+
+    // check old password
+    if (!await user.isValidPassword(req.body.oldPassword)) {
+        return next(new ErrorHandler('Old password is incorrect', 401));
+    }
+
+    // assigning new password
+    user.password = req.body.password;
+    await user.save();
+    res.status(200).json({
+        success: true
+    })
+})
+
+exports.updateProfile = catchAsyncError(async (req, res, next) => {
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email
+    }
+
+    const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
+        new: true,
+        runValidators: true,
+    })
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+//Admin: Get All Users - /api/v1/admin/users
+exports.getAllUsers = catchAsyncError(async (req, res, next) => {
+    const user = await User.find();
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+//Admin: Get Specific User - api/v1/admin/user/:id
+exports.getUser = catchAsyncError(async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+        return next(new ErrorHandler(`User not found with this id ${req.params.id}`))
+    }
+    res.status(200).json({
+        success: true,
+        user
+    })
+});
+
+//Admin: Update User - api/v1/admin/user/:id
+exports.updateUser = catchAsyncError(async (req, res, next) => {
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role
+    }
+    const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
+        new: true,
+        runValidators: true
+    })
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+//Admin: Delete User - api/v1/admin/user/:id
+exports.deleteUser = catchAsyncError(async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+    if (!user) {
+        return next(new ErrorHandler(`User not found with this is ${req.params.id}`))
+    }
+    await User.findByIdAndDelete(req.params.id);
+    res.status(200).json({
+        success: true
+    })
 })
