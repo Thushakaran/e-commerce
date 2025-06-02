@@ -1,140 +1,117 @@
 [
     {
-  "name": "Dell Inspiron Laptop",
-  "price": 1200.50,
-  "description": "High-performance Dell laptop with 16GB RAM, 512GB SSD, and Intel i7 processor.",
-  "ratings": "4.2",
-  "images": [
-    {
-      "image": "https://example.com/images/laptop-front.jpg"
+        "name": "OPPO F21s Pro 5G",
+        "price": 245.67,
+        "description": "OPPO F21s Pro 5G is a powerful device with a RAM extension feature, that offers brilliant operational speed to users.",
+        "ratings": 4.5,
+        "images": [
+            {
+                "image": "/images/products/1.jpg"
+            },
+            {
+                "image": "/images/products/2.jpg"
+            }
+        ],
+        "category": "Mobile Phones",
+        "seller": "Amazon",
+        "stock": 5,
+        "numOfReviews": 15,
+        "reviews": []
     },
     {
-      "image": "https://example.com/images/laptop-side.jpg"
-    }
-  ],
-  "category": "Laptops",
-  "seller": "Dell Official Store",
-  "stock": 10,
-  "numOfReview": 2,
-  "review": [
-    {
-      "name": "Alice Johnson",
-      "rating": "5",
-      "comment": "Great laptop for programming and daily use."
+        "name": "WRISTIO HD, Bluetooth Calling Smart Watch",
+        "price": 150.32,
+        "description": "Minix watches are exclusively designed to fulfill the advanced tech needs of today’s generation.",
+        "ratings": 3.5,
+        "images": [
+            {
+                "image": "/images/products/2.jpg"
+            }
+        ],
+        "category": "Accessories",
+        "seller": "Flipkart",
+        "stock": 9,
+        "numOfReviews": 5,
+        "reviews": []
     },
     {
-      "name": "Bob Smith",
-      "rating": "3.5",
-      "comment": "Good performance but battery life could be better."
-    }
-  ],
-  "createdAt": "2025-05-23T10:00:00.000Z"
-},
-{
-  "name": "Apple iPhone 14",
-  "price": 999.99,
-  "description": "Latest Apple iPhone with A15 Bionic chip and improved battery life.",
-  "ratings": "4.8",
-  "images": [
-    { "image": "https://example.com/images/iphone14-front.jpg" },
-    { "image": "https://example.com/images/iphone14-back.jpg" }
-  ],
-  "category": "Mobile Phones",
-  "seller": "Apple Store",
-  "stock": 25,
-  "numOfReview": 3,
-  "review": [
+        "name": "Dell Inspiron 3511 Laptop",
+        "price": 440.57,
+        "description": "Dell Inspiron 3511 11th Generation Intel Core i5-1135G7 Processor (8MB Cache, up to 4.2 GHz);Operating System: Windows 10 Home Single Language, English",
+        "ratings": 2,
+        "images": [
+            {
+                "image": "/images/products/3.jpg"
+            }
+        ],
+        "category": "Laptops",
+        "seller": "Ebay",
+        "stock": 9,
+        "numOfReviews": 12,
+        "reviews": []
+    },
     {
-      "name": "Sarah Lee",
-      "rating": "5",
-      "comment": "Amazing phone! Super smooth and fast."
-    }
-  ],
-  "createdAt": "2025-05-23T10:00:00.000Z"
-},
-{
-  "name": "Sony WH-1000XM4 Wireless Headphones",
-  "price": 349.99,
-  "description": "Noise-canceling over-ear headphones with 30 hours battery life.",
-  "ratings": "4.6",
-  "images": [
-    { "image": "https://example.com/images/sony-headphones.jpg" }
-  ],
-  "category": "Headphones",
-  "seller": "Sony Official Store",
-  "stock": 50,
-  "numOfReview": 5,
-  "review": [
+        "name": "Lenovo IdeaPad Slim 3 Laptop",
+        "price": 250.45,
+        "description": "Lenovo IdeaPad Slim 311th Gen Intel Core i5-1135G7 | Speed: 2.4 GHz (Base) - 4.2 GHz (Max) | 4 Cores | 8 Threads | 8 MB Cache",
+        "ratings": 4,
+        "images": [
+          {
+            "image": "/images/products/6.jpg"
+          }
+        ],
+        "category": "Laptops",
+        "seller": "Ebay",
+        "stock": 9,
+        "numOfReviews": 12,
+        "reviews": []
+      },
+      {
+        "name": "ASUS VivoBook 15 Laptop",
+        "price": 767.32,
+        "description": "ASUS VivoBook 15 15.6-inch (39.62 cm) HD, Dual Core Intel Celeron N4020, Thin and Light Laptop (4GB RAM/256GB SSD/Integrated Graphics/Windows 11 Home/Transparent Silver/1.8 Kg), X515MA-BR011W",
+        "ratings": 5,
+        "images": [
+          {
+            "image": "/images/products/7.jpg"
+          }
+        ],
+        "category": "Laptops",
+        "seller": "Ebay",
+        "stock": 9,
+        "numOfReviews": 12,
+        "reviews": []
+    },
     {
-      "name": "Tom Allen",
-      "rating": "4",
-      "comment": "Best noise cancellation, but a bit pricey."
-    }
-  ],
-  "createdAt": "2025-05-23T10:00:00.000Z"
-},
-{
-  "name": "Atomic Habits by James Clear",
-  "price": 18.00,
-  "description": "Practical guide to building good habits and breaking bad ones.",
-  "ratings": "4.9",
-  "images": [
-    { "image": "https://example.com/images/atomic-habits.jpg" }
-  ],
-  "category": "Books ",
-  "seller": "Penguin Publishers",
-  "stock": 100,
-  "numOfReview": 8,
-  "review": [
+        "name": "PTron Newly Launched Tangent Sports, 60Hrs Playtime",
+        "price": 15.46,
+        "description": "Gigantic 60 + Hours of music playtime on a single charge; BT5.2 Wireless headphones with ENC (Environmental Noise Cancellation) Technology to enhance your voice quality over the voice calls",
+        "ratings": 5,
+        "images": [
+            {
+                "image": "/images/products/4.jpg"
+            }
+        ],
+        "category": "Headphones",
+        "seller": "Amazon",
+        "stock": 4,
+        "numOfReviews": 20,
+        "reviews": []
+    },
     {
-      "name": "Emily White",
-      "rating": "5",
-      "comment": "Life-changing read!"
+        "name": "Campus Men's Maxico Running Shoes",
+        "price": 10.12,
+        "description": "The high raised back cover with extra padding.",
+        "ratings": 3,
+        "images": [
+            {
+                "image": "/images/products/5.jpg"
+            }
+        ],
+        "category": "Sports",
+        "seller": "Ebay",
+        "stock": 6,
+        "numOfReviews": 9,
+        "reviews": []
     }
-  ],
-  "createdAt": "2025-05-23T10:00:00.000Z"
-},
-{
-  "name": "Nike Air Zoom Pegasus 39",
-  "price": 120.00,
-  "description": "Comfortable and lightweight running shoes for daily training.",
-  "ratings": "4.4",
-  "images": [
-    { "image": "https://example.com/images/nike-shoes.jpg" }
-  ],
-  "category": "Clothes/Shoes",
-  "seller": "Nike Official Store",
-  "stock": 40,
-  "numOfReview": 4,
-  "review": [
-    {
-      "name": "Jake Martin",
-      "rating": "4",
-      "comment": "Great shoes but size runs small."
-    }
-  ],
-  "createdAt": "2025-05-23T10:00:00.000Z"
-},
-{
-  "name": "Modern LED Ceiling Light - 36W",
-  "price": 49.99,
-  "description": "Energy-efficient ceiling light suitable for living rooms and offices.",
-  "ratings": "4.1",
-  "images": [
-    { "image": "https://example.com/images/ceiling-light.jpg" }
-  ],
-  "category": "Home",
-  "seller": "Home Essentials Co.",
-  "stock": 30,
-  "numOfReview": 2,
-  "review": [
-    {
-      "name": "Laura Green",
-      "rating": "4",
-      "comment": "Bright and elegant light fixture."
-    }
-  ],
-  "createdAt": "2025-05-23T10:00:00.000Z"
-}
 ]
-
