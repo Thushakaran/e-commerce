@@ -3,16 +3,32 @@ const User = require('../models/userModel')
 const sendEmail = require('../utils/email');
 const ErrorHandler = require('../utils/errorHandler')
 const sendToken = require('../utils/jwt')
+const crypto = require('crypto')
 
+//Register User - /api/v1/register
 exports.registerUser = catchAsyncError(async (req, res, next) => {
-    const { name, email, password, avatar } = req.body
+    const { name, email, password } = req.body
+
+    let avatar;
+
+    let BASE_URL = process.env.BACKEND_URL;
+    if (process.env.NODE_ENV === "production") {
+        BASE_URL = `${req.protocol}://${req.get('host')}`
+    }
+
+    if (req.file) {
+        avatar = `${BASE_URL}/uploads/user/${req.file.originalname}`
+    }
+
     const user = await User.create({
         name,
         email,
         password,
         avatar
     });
+
     sendToken(user, 201, res)
+
 })
 
 //Login User - /api/v1/login
