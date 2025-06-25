@@ -16,7 +16,7 @@ const orderSchema = mongoose.Schema({
         },
         phoneNo: {
             type: String,
-            require: true
+            required: true
         },
         postalCode: {
             type: String,
@@ -26,7 +26,7 @@ const orderSchema = mongoose.Schema({
     user: {
         type: mongoose.SchemaTypes.ObjectId,
         required: true,
-        ref: "User"
+        ref: 'User'
     },
     orderItems: [{
         name: {
@@ -48,8 +48,9 @@ const orderSchema = mongoose.Schema({
         product: {
             type: mongoose.SchemaTypes.ObjectId,
             required: true,
-            ref: "Product"
+            ref: 'Product'
         }
+
     }],
     itemsPrice: {
         type: Number,
@@ -98,5 +99,6 @@ const orderSchema = mongoose.Schema({
     }
 })
 
-let orderModel = mongoose.model('Order', orderSchema)
+let orderModel = mongoose.model('Order', orderSchema);
+
 module.exports = orderModel;

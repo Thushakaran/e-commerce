@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    name: {
+    name : {
         type: String,
         required: [true, "Please enter product name"],
         trim: true,
@@ -9,6 +9,7 @@ const productSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
+        required: true,
         default: 0.0
     },
     description: {
@@ -38,32 +39,34 @@ const productSchema = new mongoose.Schema({
                 'Accessories',
                 'Headphones',
                 'Food',
-                'Books ',
+                'Books',
                 'Clothes/Shoes',
                 'Beauty/Health',
                 'Sports',
                 'Outdoor',
-                'Home'],
-            message: "Please select correct category"
+                'Home'
+            ],
+            message : "Please select correct category"
         }
     },
     seller: {
         type: String,
         required: [true, "Please enter product seller"]
-    }, stock: {
+    },
+    stock: {
         type: Number,
         required: [true, "Please enter product stock"],
         maxLength: [20, 'Product stock cannot exceed 20']
     },
-    numOfReview: {
+    numOfReviews: {
         type: Number,
         default: 0
     },
     reviews: [
         {
-            name: {
-                type: String,
-                required: true
+            user:{
+                type:mongoose.Schema.Types.ObjectId,
+                ref: 'User'
             },
             rating: {
                 type: String,
@@ -76,14 +79,15 @@ const productSchema = new mongoose.Schema({
         }
     ],
     user: {
-        type: mongoose.Schema.Types.ObjectId
-    },
-    createdAt: {
+        type : mongoose.Schema.Types.ObjectId
+    }
+    ,
+    createdAt:{
         type: Date,
         default: Date.now()
     }
 })
 
-let schema = mongoose.model('product', productSchema)
+let schema = mongoose.model('Product', productSchema)
 
-module.exports = schema;
+module.exports = schema

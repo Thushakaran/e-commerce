@@ -20,5 +20,5 @@ export default function ProtectedRoute ({children, isAdmin}) {
         return <Loader/>
     }
 
-
+   
 }
